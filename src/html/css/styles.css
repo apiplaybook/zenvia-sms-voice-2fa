@@ -1,0 +1,125 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+	line-height: 1;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 25px 50px;
+	box-shadow: #000000 0px 2px 2px -2px;
+}
+
+h1,
+p {
+	font-family: 'Cabin', sans-serif !important;
+	color: #505b64 !important;
+}
+
+h1 {
+	font-size: 1.85rem;
+	color: #222 !important;
+}
+
+h1.brand {
+	font-family: Georgia, Times, times new roman, serif !important;
+	font-stretch: expanded;
+	font-weight: 700;
+	letter-spacing: 0;
+	padding: 0;
+	margin: 0;
+	line-height: 1;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
+}
+div.content {
+	display: flex;
+	flex-direction: column;
+}
+
+div.purchase {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border: 1px #acacac solid;
+	padding: 25px 40px;
+	margin: 30px 0;
+}
+
+div.purchase img {
+	width: 200px;
+}
+div.purchase div {
+	margin: 0 20px;
+}
+
+div.purchase div.purchase-details {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+form {
+	margin: 30px auto;
+	width: 450px;
+}
+
+form p {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+form label {
+	align-self: center;
+	font-size: 1.2em;
+}
+
+input,
+select {
+	background-color: #f8f9ff;
+	padding: 7px 15px;
+	font-size: 1.2em;
+	border-radius: 5px;
+	border: 1px #acacac7c solid;
+}
+
+button {
+	background-image: linear-gradient(to right, #232526 0%, #414345 51%, #232526 100%);
+	margin: 10px auto;
+	padding: 15px 45px;
+	font-family: 'Cabin', sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	transition: 0.5s;
+	background-size: 200% auto;
+	color: white;
+	box-shadow: 0 0 20px #eee;
+	border-radius: 10px;
+	display: block;
+	cursor: pointer;
+}
+button:hover {
+	background-position: right center; /* change the direction of the change here */
+	color: #fff;
+	text-decoration: none;
+}
+
+/* div.purchase div.purchase-details p {
+	max-width: 10px;
+} */

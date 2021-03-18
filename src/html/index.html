@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="./css/styles.css">
+
+	<title>Fechar pedido</title>
+</head>
+
+<body>
+	<header>
+		<h1 class="brand">Prensa Store</h1>
+		<p style="align-self: flex-end;">Olá, usuário</p>
+	</header>
+	<main>
+		<div class="content">
+			<h1>Revisar compra</h1>
+			<div class="purchase">
+				<img src="http://localhost:1000/assets/prensa-mug.jpg" alt="Caneca Prensa">
+				<div class="details">
+					<h1>Caneca Prensa</h1>
+					<p>Preço: R$29,99</p>
+					<br />
+					<p>Linda caneca da Prensa, minimalista <br /> e ótima para beber aquele cafézinho<br /> enquanto faz sua
+						leitura
+						diária.</p>
+				</div>
+			</div>
+			<h1>Finalizar compra</h1>
+
+			<form action="http://localhost:1000/verificacao" method="POST">
+				<p>
+
+					<label for="#numero_destino">Número de celular:</label>
+					<input id="numero_destino" type="text" name="numero_destino" placeholder="11987654321" minlength="11"
+						maxlength="11" required>
+				</p>
+				<p>
+
+					<label for="#tts">Método de Envio do código:</label>
+					<select id="tts" name="tts" required>
+						<option value="false">SMS</option>
+						<option value="true">Voz</option>
+					</select>
+				</p>
+
+				<button type="submit">Enviar código de Verificação</button>
+			</form>
+
+		</div>
+
+	</main>
+</body>
+
+</html>
