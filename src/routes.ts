@@ -2,6 +2,7 @@
 import express, { Request, Response } from 'express'
 
 import { checkVerificationCode } from './UseCases/CheckVerificationCode'
+import { sendVerificationCode } from './UseCases/SendVerificationCode'
 
 const routes = express.Router() // Inicializa o router do express
 
@@ -29,6 +30,34 @@ routes.post('/verificacao', async (request: Request, response: Response) => {
 	}
 
 	response.render('verificacao') // Renderiza o arquivo verificacao.html com o ejs
+})
+
+// Rota para receber o código enviado pelo usuário, realizar a requição à API e exibição da tela do resultado
+routes.post('/verifica', async (request: Request, response: Response) => {
+	const { codigo } = request.body // Armazena o código em uma variável
+
+	// Verifica se o código foi passado
+	if (codigo) {
+		// Chama a nossa classe que faz a chamada à API e armazena o resultado retornado pela chamada
+		// É passado o ID que armazenamos na seção e o código enviado pelo usuário
+		const validade = await checkVerificationCode.execute(
+			request.session.verificacaoId,
+			codigo
+		)
+
+		// Verifica se o retorno da API foi igual a 'valido'
+		if (validade === 'valido') {
+			// Se sim, renderiza a tela resultado.html e envia a variável validade como 'concluída com sucesso!'
+			response.render('resultado', {
+				validade: 'concluída com sucesso!',
+			})
+		} else {
+			// Se não, renderiza a tela resultado.html e envia a variável validade como 'cancelada! Seu código de verificação está inválido'
+			response.render('resultado', {
+				validade: 'cancelada! Seu código de verificação está inválido',
+			})
+		}
+	}
 })
 
 export default routes
